@@ -18,4 +18,20 @@ public class Customer {
 
     private Double income;
     private String location;
+
+    public boolean isIncomeEqualOrLower (Double amount) {
+        return income <= amount;
+    }
+
+    public boolean isIncomeBetween (Double minAmount, Double maxAmount) {
+        return income >= minAmount && income <= maxAmount;
+    }
+
+    public boolean isAgeLowerThan (Integer age) {
+        return this.age < age;
+    }
+
+    public boolean isLocationAllowed (String location) {
+        return this.location.equalsIgnoreCase(location);
+    }
 }

@@ -26,6 +26,22 @@ public class Loan {
         );
     }
 
+    public boolean isConsignementLoanAllowed () {
+        return customer.isIncomeEqualOrHigher(5000.0);
+    }
+
+    public boolean isGuaranteedLoanAllowed () {
+        if (customer.isIncomeEqualOrLower(3000.0)) {
+            return true;
+        }
+
+        return (
+                customer.isIncomeBetween(3000.0, 5000.0)
+                        && customer.isAgeLowerThan(30)
+                        && customer.isLocationAllowed("SP")
+        );
+    }
+
     public double getPersonalInterest () {
         if (isPersonalLoanAllowed()) {
             return 4.0;

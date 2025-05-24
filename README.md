@@ -122,7 +122,7 @@ POST /customer-loans
 
 - **💰 Renda Inválida**
   - ❗ Causa: Valor negativo ou zero
-  - ✅ Solução: Enviar valor positivo maior que zero
+  - ✅ Solução: Enviar valor positivo maior que zero (minimo R$1000)
 
 - **📍 Localização Inválida**
   - ❗ Causa: UF não reconhecida ou em formato inválido

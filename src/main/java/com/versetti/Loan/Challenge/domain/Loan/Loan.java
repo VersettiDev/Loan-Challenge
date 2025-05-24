@@ -30,7 +30,7 @@ public class Loan {
         return customer.isIncomeEqualOrHigher(5000.0);
     }
 
-    public boolean isGuaranteedLoanAllowed () {
+    public boolean isGuarantedLoanAllowed () {
         if (customer.isIncomeEqualOrLower(3000.0)) {
             return true;
         }
@@ -47,5 +47,19 @@ public class Loan {
             return 4.0;
         }
         throw new LoanException("Personal Loan not allowed");
+    }
+
+    public double getConsignementInterest () {
+        if (isConsignementLoanAllowed()) {
+            return 2.0;
+        }
+        throw new LoanException("Consignement Loan not allowed");
+    }
+
+    public double getGuarantedInterest () {
+        if (isGuarantedLoanAllowed()) {
+            return 2.0;
+        }
+        throw new LoanException("Guaranted Loan not allowed");
     }
 }

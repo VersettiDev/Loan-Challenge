@@ -25,4 +25,11 @@ public class Loan {
                         && customer.isLocationAllowed("SP")
         );
     }
+
+    public double getPersonalInterest () {
+        if (isPersonalLoanAllowed()) {
+            return 4.0;
+        }
+        throw new LoanException("Personal Loan not allowed");
+    }
 }

@@ -35,7 +35,15 @@ O sistema tem como objetivo analisar o perfil do cliente (incluindo salário, id
 - Maven
 
 ## 📥 Formato da Requisição
-`json { "customer": { "name": "Nome do Cliente", "age": 25, "salary": 3000.00, "location": "SP" } }`
+```json
+{
+    "name": "Nome do Cliente", 
+    "document": "275.484.389-23",
+    "age": 28,
+    "income": 3000.00,
+    "location": "SP"
+}
+```
 
 
 ## 📤 Formato da Resposta

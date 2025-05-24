@@ -18,23 +18,6 @@ O sistema tem como objetivo analisar o perfil do cliente (incluindo salário, id
 4. Inicie a aplicação com `mvn spring-boot:run`
 5. A API estará disponível em `http://localhost:8080`
 
-## 📊 Regras de Negócio
-
-### Empréstimo Pessoal
-- Concedido se o salário for igual ou inferior a R$ 3.000
-- Concedido se o salário estiver entre R$ 3.000 e R$ 5.000, desde que o cliente:
-  - Tenha menos de 30 anos
-  - Resida em São Paulo (SP)
-
-### Empréstimo Consignado
-- Concedido se o salário for igual ou superior a R$ 5.000
-
-### Empréstimo com Garantia
-- Concedido se o salário for igual ou inferior a R$ 3.000
-- Concedido se o salário estiver entre R$ 3.000 e R$ 5.000, desde que o cliente:
-  - Tenha menos de 30 anos
-  - Resida em São Paulo (SP)
-
 ## 🚀 Funcionalidades
 - Análise automática do perfil do cliente
 - Cálculo de empréstimos disponíveis
@@ -87,6 +70,23 @@ POST /customer-loans
 | age | number | Sim | Idade do cliente (mínimo 18 anos) |
 | income | number | Sim | Renda mensal do cliente em reais |
 | location | string | Sim | UF do estado de residência (2 caracteres) |
+
+## 📊 Regras de Negócio
+
+### 🙋‍♀️ Empréstimo Pessoal
+- Concedido se o salário for igual ou inferior a R$ 3.000
+- Concedido se o salário estiver entre R$ 3.000 e R$ 5.000, desde que o cliente:
+  - Tenha menos de 30 anos
+  - Resida em São Paulo (SP)
+
+### ✨ Empréstimo Consignado
+- Concedido se o salário for igual ou superior a R$ 5.000
+
+### 🥙 Empréstimo com Garantia
+- Concedido se o salário for igual ou inferior a R$ 3.000
+- Concedido se o salário estiver entre R$ 3.000 e R$ 5.000, desde que o cliente:
+  - Tenha menos de 30 anos
+  - Resida em São Paulo (SP)
 
 ## 📝 Licença
 Este projeto está sob a licença [MIT](LICENSE).

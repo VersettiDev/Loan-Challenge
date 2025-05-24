@@ -3,6 +3,7 @@ package com.versetti.Loan.Challenge.controller;
 import com.versetti.Loan.Challenge.dto.CLoanRequest;
 import com.versetti.Loan.Challenge.dto.CLoanResponse;
 import com.versetti.Loan.Challenge.service.LoanService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +20,7 @@ public class LoanController {
     private LoanService loanService;
 
     @PostMapping
-    public ResponseEntity<CLoanResponse> getAvaibleLoans (@RequestBody CLoanRequest loanRequest) {
+    public ResponseEntity<CLoanResponse> getAvaibleLoans (@RequestBody @Valid CLoanRequest loanRequest) {
         var loanResponse = loanService.getLoansAvaibleToCustomer(loanRequest);
         return ResponseEntity.status(HttpStatus.OK).body(loanResponse);
     }

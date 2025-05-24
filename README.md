@@ -6,6 +6,18 @@ Este é um sistema de análise de empréstimos que avalia e retorna os tipos de 
 ## 🎯 Objetivo
 O sistema tem como objetivo analisar o perfil do cliente (incluindo salário, idade e localização) e determinar quais tipos de empréstimos estão disponíveis, seguindo critérios predefinidos.
 
+## 🛠️ Tecnologias Utilizadas
+- Java 24
+- Spring Boot
+- Maven
+
+## 🔧 Como Executar
+1. Clone o repositório
+2. Certifique-se de ter o Java 24 instalado
+3. Execute `mvn clean install`
+4. Inicie a aplicação com `mvn spring-boot:run`
+5. A API estará disponível em `http://localhost:8080`
+
 ## 📊 Regras de Negócio
 
 ### Empréstimo Pessoal
@@ -28,11 +40,6 @@ O sistema tem como objetivo analisar o perfil do cliente (incluindo salário, id
 - Cálculo de empréstimos disponíveis
 - Retorno das taxas de juros para cada tipo de empréstimo
 - Resposta em formato estruturado com nome do cliente e empréstimos disponíveis
-
-## 🛠️ Tecnologias Utilizadas
-- Java 24
-- Spring Boot
-- Maven
 
 ## 🧶 Endpoints Disponíveis
 ### 1. Endpoint para verificação de empréstimos disponíveis
@@ -66,12 +73,12 @@ POST /customer-loans
 }
 ```
 
-### Tipos de Empréstimos Retornados
+### 🎁 Tipos de Empréstimos Retornados
 - `PERSONAL`: Empréstimo Pessoal
 - `CONSIGNMENT`: Empréstimo Consignado
 - `GUARANTED`: Empréstimo com Garantia
 
-### Detalhes dos Campos da Requisição
+### 📌 Detalhes dos Campos da Requisição
 
 | Campo | Tipo | Obrigatório | Descrição |
 |-------|------|-------------|-----------|
@@ -80,14 +87,6 @@ POST /customer-loans
 | age | number | Sim | Idade do cliente (mínimo 18 anos) |
 | income | number | Sim | Renda mensal do cliente em reais |
 | location | string | Sim | UF do estado de residência (2 caracteres) |
-
-
-## 🔧 Como Executar
-1. Clone o repositório
-2. Certifique-se de ter o Java 24 instalado
-3. Execute `mvn clean install`
-4. Inicie a aplicação com `mvn spring-boot:run`
-5. A API estará disponível em `http://localhost:8080`
 
 ## 📝 Licença
 Este projeto está sob a licença [MIT](LICENSE).

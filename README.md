@@ -34,7 +34,12 @@ O sistema tem como objetivo analisar o perfil do cliente (incluindo salário, id
 - Spring Boot
 - Maven
 
-## 📥 Formato da Requisição
+## 🧶 Endpoints Disponíveis
+### 1. Endpoint para verificação de empréstimos disponíveis
+``` 
+POST /customer-loans
+```
+**Request:**
 ```json
 {
     "name": "Nome do Cliente", 
@@ -44,9 +49,7 @@ O sistema tem como objetivo analisar o perfil do cliente (incluindo salário, id
     "location": "SP"
 }
 ```
-
-
-## 📤 Formato da Resposta
+**Response:**
 ```json
 {
   "customerName": "Nome do Cliente",
@@ -63,40 +66,28 @@ O sistema tem como objetivo analisar o perfil do cliente (incluindo salário, id
 }
 ```
 
+### Tipos de Empréstimos Retornados
+- `PERSONAL`: Empréstimo Pessoal
+- `CONSIGNMENT`: Empréstimo Consignado
+- `GUARANTED`: Empréstimo com Garantia
+
+### Detalhes dos Campos da Requisição
+
+| Campo | Tipo | Obrigatório | Descrição |
+|-------|------|-------------|-----------|
+| name | string | Sim | Nome completo do cliente |
+| document | string | Sim | CPF do cliente (formato: XXX.XXX.XXX-XX) |
+| age | number | Sim | Idade do cliente (mínimo 18 anos) |
+| income | number | Sim | Renda mensal do cliente em reais |
+| location | string | Sim | UF do estado de residência (2 caracteres) |
+
+
 ## 🔧 Como Executar
 1. Clone o repositório
 2. Certifique-se de ter o Java 24 instalado
 3. Execute `mvn clean install`
 4. Inicie a aplicação com `mvn spring-boot:run`
 5. A API estará disponível em `http://localhost:8080`
-
-## ⚠️ Possíveis Erros e Tratamentos
-
-### Erros de Validação (400 Bad Request)
-
-### Tipos de Erros e Soluções
-
-#### 1. Validação de Dados do Cliente
-- **Nome Inválido**
-  - Causa: Nome em branco ou nulo
-  - Solução: Enviar um nome válido com pelo menos 3 caracteres
-
-- **CPF Inválido**
-  - Causa: Formato incorreto ou CPF inexistente
-  - Solução: Enviar um CPF válido no formato XXX.XXX.XXX-XX
-
-- **Idade Inválida**
-  - Causa: Idade menor que 18 anos ou valor negativo
-  - Solução: Enviar idade válida (maior ou igual a 18)
-
-- **Renda Inválida**
-  - Causa: Valor negativo ou zero
-  - Solução: Enviar valor positivo maior que zero
-
-- **Localização Inválida**
-  - Causa: UF não reconhecida ou em formato inválido
-  - Solução: Enviar UF válida com 2 caracteres (ex: SP, RJ, MG)
-
 
 ## 📝 Licença
 Este projeto está sob a licença [MIT](LICENSE).

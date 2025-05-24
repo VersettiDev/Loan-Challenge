@@ -23,6 +23,10 @@ public class Customer {
         return income <= amount;
     }
 
+    public boolean isIncomeEqualOrHigher (Double amount) {
+        return income >= amount;
+    }
+
     public boolean isIncomeBetween (Double minAmount, Double maxAmount) {
         return income >= minAmount && income <= maxAmount;
     }

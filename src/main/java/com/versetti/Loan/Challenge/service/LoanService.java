@@ -20,6 +20,15 @@ public class LoanService {
         if (loan.isPersonalLoanAllowed()) {
             loans.add(new LoanResponse(LoanType.PERSONAL, loan.getPersonalInterest()));
         }
-        return null;
+
+        if (loan.isConsignementLoanAllowed()) {
+            loans.add(new LoanResponse(LoanType.CONSIGNMENT, loan.getConsignementInterest()));
+        }
+
+        if (loan.isGuarantedLoanAllowed()) {
+            loans.add(new LoanResponse(LoanType.GUARANTED, loan.getGuarantedInterest()));
+        }
+
+        return new CLoanResponse(Customer.getName(), loans);
     }
 }

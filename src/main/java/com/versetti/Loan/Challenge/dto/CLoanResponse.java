@@ -4,5 +4,5 @@ import com.versetti.Loan.Challenge.domain.Loan.Loan;
 
 import java.util.List;
 
-public record CLoanResponse(String name, List<Loan> loans) {
+public record CLoanResponse(String name, List<LoanResponse> loans) {
 }
